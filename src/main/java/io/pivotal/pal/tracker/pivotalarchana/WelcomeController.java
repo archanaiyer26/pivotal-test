@@ -15,8 +15,8 @@ public class WelcomeController {
     }
 
     @RequestMapping("/hello")
-    public String getHello(){
+    public String sayHello(){
 
-        return "hello";
+        return hello;
     }
 }
