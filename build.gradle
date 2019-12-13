@@ -30,11 +30,18 @@ dependencies {
 	testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 	testCompile("org.mockito:mockito-core:2.23.4")
 	compile("org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion")
-	compile("mysql:mysql-connector-java:6.0.6")
+	compile("mysql:mysql-connector-java:8.0.17")
 	compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
 }
 def developmentDbUrl = "jdbc:mysql://localhost:3306/tracker_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
 
+bootRun.environment([
+
+		"welcome.message": "Ojasvi",
+		"SPRING_DATASOURCE_URL": developmentDbUrl
+
+
+])
 flyway {
 	url = developmentDbUrl
 	user = "tracker"
